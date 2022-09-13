@@ -1,0 +1,29 @@
+$max-width: 1920px;
+$md-breakpoint: 1024px;
+$lg-breakpoint: 1280px;
+
+@mixin responsive($screen) {
+  @if ($screen == 'T') {
+    @media screen and (min-width: $md-breakpoint) {
+      @content;
+    }
+  }
+  @if ($screen == 'D') {
+    @media screen and (min-width: $lg-breakpoint) {
+      @content;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+
+  @include responsive(T) {
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+
+  @include responsive(D) {
+    max-width: 1790px;
+  }
+}

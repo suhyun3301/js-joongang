@@ -16,4 +16,19 @@ li {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+select {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
 }

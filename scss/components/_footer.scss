@@ -1,0 +1,213 @@
+.footer {
+  padding: 13.33vw 5.33vw 5.33vw 5.33vw;
+
+  a {
+    color: #000;
+    font-size: 2.93vw;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &-menu {
+    @include flex-box($jc: between, $ai: start);
+    margin-bottom: 16vw;
+
+    &-box {
+      .dep1 {
+        display: inline-block;
+        font-weight: 500;
+        margin-bottom: 5.83vw;
+      }
+
+      .dep2 {
+        li {
+          margin-bottom: 3.16vw;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+
+    &-box:last-child {
+      @include flex-box($ai: start);
+      flex-direction: column;
+    }
+  }
+
+  &-etc {
+    @include flex-box($ai: start);
+    flex-direction: column;
+
+    a {
+      text-transform: uppercase;
+
+      &:first-child {
+        margin-bottom: 3.46vw;
+      }
+    }
+
+    .footer-copy {
+      margin-top: 16vw;
+
+      .footer-logo {
+        font-size: 4vw;
+        font-weight: 600;
+        margin-bottom: 1.73vw;
+
+        span {
+          font-size: 3vw;
+          font-weight: 200;
+        }
+      }
+
+      .copyright {
+        font-size: 2.66vw;
+        color: #aaa;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    padding: 6.11vw 4.51vw 3.95vw 4.51vw;
+
+    a {
+      font-size: 1.4vw;
+    }
+
+    &-menu {
+      @include flex-box($jc: start, $ai: start);
+      margin-bottom: 10vw;
+
+      &-box {
+        width: 13%;
+
+        .dep1 {
+          margin-bottom: 2vw;
+        }
+
+        .dep2 {
+          li {
+            margin-bottom: 1.2vw;
+          }
+        }
+      }
+    }
+
+    &-etc {
+      @include flex-box($jc: between, $ai: start);
+      flex-direction: row;
+
+      a {
+        font-size: 1.2vw;
+        text-align: end;
+        letter-spacing: 0.03em;
+
+        &:first-child {
+          margin-bottom: 0;
+          order: 2;
+        }
+
+        &:nth-child(2) {
+          order: 3;
+        }
+      }
+
+      .footer-copy {
+        margin-top: 0;
+        width: 80%;
+        flex-shrink: 0;
+        order: 1;
+
+        .footer-logo {
+          font-size: 1.4vw;
+          margin-bottom: 0.8vw;
+
+          span {
+            font-size: 0.8vw;
+            font-weight: 200;
+          }
+        }
+
+        .copyright {
+          font-size: 1vw;
+          color: #000;
+          letter-spacing: 0.03em;
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 88px 65px 57px 65px;
+
+    a {
+      font-size: 14px;
+    }
+
+    &-menu {
+      margin-bottom: 102px;
+
+      &-box {
+        width: 155px;
+
+        .dep1 {
+          margin-bottom: 15px;
+        }
+
+        .dep2 {
+          li {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+
+    &-etc {
+      a {
+        font-size: 12px;
+        letter-spacing: 0.03em;
+      }
+
+      .footer-copy {
+        width: 86%;
+
+        .footer-logo {
+          font-size: 17px;
+          margin-bottom: 6px;
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .copyright {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

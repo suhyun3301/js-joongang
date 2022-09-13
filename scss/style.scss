@@ -1,1 +1,12 @@
 @import './base/reset';
+@import './base/grid';
+
+@import './mixins/flex-box';
+@import './mixins/absolute';
+
+@import './components/header';
+@import './components/footer';
+
+section {
+  height: 800px;
+}

@@ -1,0 +1,163 @@
+.header {
+  position: fixed;
+  width: 100%;
+  @include flex-box($jc: between, $ai: start);
+
+  .logo,
+  .nav {
+    display: none;
+  }
+
+  .btn-family {
+    @include flex-box($jc: between);
+    flex-direction: column;
+    width: 12.6vw;
+    height: 12.6vw;
+    padding: 4.7vw;
+
+    span {
+      @include flex-box($jc: between);
+      width: 100%;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: 0.9vw;
+        height: 0.9vw;
+        background-color: #000;
+      }
+    }
+  }
+
+  .btn-menu {
+    @include flex-box($jc: between);
+    flex-direction: column;
+    width: 14vw;
+    height: 12vw;
+    padding: 4.7vw;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 0.4vw;
+      background-color: #000;
+    }
+  }
+
+  .select-title {
+    width: 50%;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 4vw;
+    line-height: 1;
+    display: none;
+
+    .selected-title {
+      @include flex-box($jc: start);
+      position: relative;
+      width: 26vw;
+
+      button {
+        @include absolute-center-Y;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-top: 1vw solid #000;
+        border-left: 1vw solid transparent;
+        border-right: 1vw solid transparent;
+      }
+    }
+
+    .options-title {
+      display: none;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 4.5vw 6vw 0 4vw;
+
+    .btn-menu,
+    .select-title {
+      display: none;
+    }
+
+    .btn-family {
+      width: 2vw;
+      height: 2vw;
+      padding: 0.5vw;
+
+      span {
+        &::before,
+        &::after {
+          width: 0.3vw;
+          height: 0.3vw;
+        }
+      }
+    }
+
+    .logo {
+      display: block;
+      font-size: 1.7vw;
+      font-weight: 600;
+      width: 83%;
+    }
+
+    .nav {
+      display: block;
+
+      ul li {
+        margin-bottom: 0.4vw;
+
+        a {
+          font-size: 1.66vw;
+          font-weight: 500;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  @include responsive(D) {
+    max-width: 1790px;
+    margin: 0 auto;
+    top: 65px;
+    left: 65px;
+    right: 65px;
+    padding: 0 120px 0 0;
+
+    .btn-family {
+      width: 28px;
+      height: 28px;
+      padding: 7px;
+
+      span {
+        &::before,
+        &::after {
+          width: 4px;
+          height: 4px;
+        }
+      }
+    }
+
+    .logo {
+      font-size: 24px;
+      width: 88%;
+    }
+
+    .nav {
+      display: block;
+
+      ul li {
+        margin-bottom: 6px;
+
+        a {
+          font-size: 24px;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+}
